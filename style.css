@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 body {
@@ -16,7 +17,25 @@ body {
   color: #fff;
   font-family: 'Delphian', sans-serif;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  height: 32px;
+  max-width: 100px;
 }
 
 .hero {
@@ -28,6 +47,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 20px;
+  padding-top: 120px;
 }
 
 .logo {
@@ -37,7 +57,7 @@ body {
 }
 
 .tagline {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 40px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -56,4 +76,30 @@ body {
 .cta:hover {
   background: white;
   color: black;
+}
+
+/* Responsive: móviles */
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .cta {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .nav-logo {
+    height: 28px;
+    max-width: 80px;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
 }
