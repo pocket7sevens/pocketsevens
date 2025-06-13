@@ -54,8 +54,6 @@ body {
   max-width: 80%;
   height: auto;
   margin-bottom: 20px;
-  filter: url(#rippleFilter);
-  transition: filter 0.5s ease-in-out;
 }
 
 .cta {
