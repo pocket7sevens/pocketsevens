@@ -14,9 +14,9 @@
 
   <div class="hero">
     <div class="ripple-wrapper">
-      <img src="logo.png" alt="POCKET SEVENS LOGO" class="logo ripple" />
+      <img src="logo.png" alt="POCKET SEVENS LOGO" class="logo ripple" id="animated-logo" />
     </div>
-    <a href="#shop" class="cta">VER PRODUCTO</a>
+    <a href="#shop" class="cta" onclick="playSound()">MORE</a>
   </div>
 
   <audio id="cave-sound" preload="auto">
@@ -24,21 +24,18 @@
   </audio>
 
   <script>
-    let played = false;
-    window.addEventListener('scroll', () => {
-      if (!played) {
-        const audio = document.getElementById('cave-sound');
-        audio.volume = 0.3;
-        audio.play();
-        played = true;
-        setInterval(() => {
-          const logo = document.querySelector('.logo');
-          logo.classList.remove('ripple');
-          void logo.offsetWidth;
-          logo.classList.add('ripple');
-        }, 1000);
-      }
-    });
+    function playSound() {
+      const audio = document.getElementById('cave-sound');
+      audio.volume = 0.3;
+      audio.play();
+
+      setInterval(() => {
+        const logo = document.getElementById('animated-logo');
+        logo.classList.remove('ripple');
+        void logo.offsetWidth;
+        logo.classList.add('ripple');
+      }, 1000);
+    }
   </script>
 </body>
 </html>
