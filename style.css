@@ -54,13 +54,7 @@ body {
   max-width: 80%;
   height: auto;
   margin-bottom: 20px;
-}
-
-.tagline {
-  font-size: 1.8rem;
-  margin-bottom: 40px;
-  font-weight: 300;
-  letter-spacing: 2px;
+  animation: rotate 40s linear infinite;
 }
 
 .cta {
@@ -78,13 +72,17 @@ body {
   color: black;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Responsive: móviles */
 @media (max-width: 768px) {
-  .tagline {
-    font-size: 1.2rem;
-    padding: 0 10px;
-  }
-
   .cta {
     font-size: 0.9rem;
     padding: 10px 20px;
