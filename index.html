@@ -13,12 +13,32 @@
   </header>
 
   <div class="hero">
-    <img src="logo.png" alt="POCKET SEVENS LOGO" class="logo" />
+    <div class="ripple-wrapper">
+      <img src="logo.png" alt="POCKET SEVENS LOGO" class="logo ripple" />
+    </div>
     <a href="#shop" class="cta">VER PRODUCTO</a>
   </div>
 
-  <audio autoplay loop>
+  <audio id="cave-sound" preload="auto">
     <source src="drop-in-cave.mp3" type="audio/mpeg" />
   </audio>
+
+  <script>
+    let played = false;
+    window.addEventListener('scroll', () => {
+      if (!played) {
+        const audio = document.getElementById('cave-sound');
+        audio.volume = 0.3;
+        audio.play();
+        played = true;
+        setInterval(() => {
+          const logo = document.querySelector('.logo');
+          logo.classList.remove('ripple');
+          void logo.offsetWidth;
+          logo.classList.add('ripple');
+        }, 1000);
+      }
+    });
+  </script>
 </body>
 </html>

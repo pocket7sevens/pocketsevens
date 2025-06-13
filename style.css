@@ -54,7 +54,6 @@ body {
   max-width: 80%;
   height: auto;
   margin-bottom: 20px;
-  animation: rotate 40s linear infinite;
 }
 
 .cta {
@@ -72,16 +71,6 @@ body {
   color: black;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Responsive: móviles */
 @media (max-width: 768px) {
   .cta {
     font-size: 0.9rem;
@@ -100,4 +89,23 @@ body {
   .hero {
     padding-top: 100px;
   }
+}
+
+@keyframes rippleEffect {
+  0% {
+    filter: drop-shadow(0 0 0px #00f) blur(0px);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px #00f) blur(1px);
+    transform: scale(1.015);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px #00f) blur(0px);
+    transform: scale(1);
+  }
+}
+
+.ripple {
+  animation: rippleEffect 0.6s ease-out;
 }
